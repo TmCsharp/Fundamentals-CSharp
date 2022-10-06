@@ -1,0 +1,16 @@
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\DataTypeFinder.exe
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\DataTypeFinder.deps.json
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\DataTypeFinder.runtimeconfig.json
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\DataTypeFinder.runtimeconfig.dev.json
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\DataTypeFinder.dll
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\ref\DataTypeFinder.dll
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\bin\Debug\net5.0\DataTypeFinder.pdb
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.csproj.AssemblyReference.cache
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.AssemblyInfoInputs.cache
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.AssemblyInfo.cs
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.csproj.CoreCompileInputs.cache
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.dll
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\ref\DataTypeFinder.dll
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.pdb
+C:\Users\Acer-F15\source\repos\1.1\DataTypeFinder\obj\Debug\net5.0\DataTypeFinder.genruntimeconfig.cache
