@@ -1,0 +1,46 @@
+using System;
+
+namespace _10.MultiplyEvensByOdds
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = Math.Abs(int.Parse(Console.ReadLine()));
+
+            Console.WriteLine(GetMultipleOfEvenAndOdds(num));
+        }
+        static int GetMultipleOfEvenAndOdds(int num)
+        {
+            return GetSumOfEvenDigits(num) * GetSumOfOddDigits(num);
+        }
+        static int GetSumOfEvenDigits(int num)
+        {
+            string evenNums = num.ToString();
+            int sumOfEven = 0;
+
+            for (int i = 0; i < evenNums.Length; i++)
+            {
+                if (evenNums[i] % 2 == 0)
+                {
+                    sumOfEven += int.Parse(evenNums[i].ToString());
+                }
+            }
+            return sumOfEven;
+        }
+        static int GetSumOfOddDigits(int num)
+        {
+            string oddNums = num.ToString();
+            int sumOfOdd = 0;
+
+            for (int i = 0; i < oddNums.Length; i++)
+            {
+                if (oddNums[i] % 2 != 0)
+                {
+                    sumOfOdd += int.Parse(oddNums[i].ToString());
+                }
+            }
+            return sumOfOdd;
+        }
+    }
+}
