@@ -1,0 +1,45 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace _03.RecursiveFibonacci
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> firstdCollection = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+            List<int> secondCollection = Console.ReadLine()
+              .Split(' ')
+              .Select(int.Parse)
+              .ToList();
+
+            List<int> result = new List<int>();
+            int n = Math.Min(firstdCollection.Count, secondCollection.Count);
+            for (int i = 0; i < n; i++)
+            {
+                result.Add(firstdCollection[i]);
+                result.Add(secondCollection[i]);
+
+            }
+            if (firstdCollection.Count > secondCollection.Count)
+            {
+                for (int i = n; i < firstdCollection.Count; i++)
+                {
+                    result.Add(firstdCollection[i]);
+                }
+            }
+            else if (secondCollection.Count > firstdCollection.Count)
+            {
+                for (int i = n; i < secondCollection.Count; i++)
+                {
+                    result.Add(secondCollection[i]);
+                }
+            }
+            Console.WriteLine(string.Join(" ", result));
+        }
+    }
+}
