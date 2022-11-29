@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _02.OddOccurrences
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, int> words = new Dictionary<string, int>();
+
+            string[] input = Console.ReadLine().Split(" ").Select(x => x.ToLower()).ToArray();
+
+            foreach (string item in input)
+            {
+                if (!words.ContainsKey(item))
+                {
+                    words.Add(item, 0);
+                }
+
+                words[item] += 1;
+            }
+
+            foreach (var dicElement in words)
+            {
+                if (dicElement.Value % 2 != 0)
+                {
+                    Console.Write(dicElement.Key + " ");
+                }
+            }
+        }
+    }
+}
