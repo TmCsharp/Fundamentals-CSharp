@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _01.CountCharsInAString
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<char, int> characters = new Dictionary<char, int>();
+
+            string input = Console.ReadLine();
+
+            foreach (char ch in input.Where(x => x != ' '))
+            {
+                if (!characters.ContainsKey(ch))
+                {
+                    characters.Add(ch, 0);
+                }
+
+                characters[ch] += 1;
+            }
+
+            foreach (var item in characters)
+            {
+                Console.WriteLine($"{item.Key} -> {item.Value}");
+            }
+        }
+    }
+}
