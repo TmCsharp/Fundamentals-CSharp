@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+
+namespace _02.AMinerTask
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, int> resources = new Dictionary<string, int>();
+
+            string key = Console.ReadLine();
+
+            while (key != "stop")
+            {
+                int value = int.Parse(Console.ReadLine());
+
+                if (!resources.ContainsKey(key))
+                {
+                    resources.Add(key, 0);
+                }
+                resources[key] += value;
+
+                key = Console.ReadLine();
+            }
+
+            foreach (var item in resources)
+            {
+                Console.WriteLine($"{item.Key} -> {item.Value}");
+            }
+        }
+    }
+}
