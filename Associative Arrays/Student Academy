@@ -1,0 +1,161 @@
+SoftUni Judge
+Contests 
+Submissions
+Feedback
+Hello, TayfunMehmed!
+Log out
+Search
+Home Submissions 30685793
+Solution #30685793 by TayfunMehmed for problem 06. Student Academy
+Zero test #1 (Correct answer)
+The zero tests are not included in the final result.
+Expected output:Your output:
+1
+John -> 5.00
+2
+Alice -> 4.50
+3
+George -> 5.00
+1
+John -> 5.00
+2
+Alice -> 4.50
+3
+George -> 5.00
+Time used: 0.080 s
+Memory used: 0.00 MB
+Zero test #2 (Correct answer)
+The zero tests are not included in the final result.
+Expected output:Your output:
+1
+Rob -> 5.50
+2
+Christian -> 5.00
+3
+Robert -> 6.00
+1
+Rob -> 5.50
+2
+Christian -> 5.00
+3
+Robert -> 6.00
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #1 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #2 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #3 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #4 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #5 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #6 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #7 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Test #8 (Correct answer)
+Time used: 0.070 s
+Memory used: 0.00 MB
+Source code
+1
+using System;
+2
+using System.Collections.Generic;
+3
+using System.Linq;
+4
+​
+5
+namespace _06.StudentAcademy
+6
+{
+7
+    class Program
+8
+    {
+9
+        static void Main(string[] args)
+10
+        {
+11
+            Dictionary<string, List<double>> students = new Dictionary<string, List<double>>();
+12
+            Dictionary<string, double> graduated = new Dictionary<string, double>();
+13
+​
+14
+            int n = int.Parse(Console.ReadLine());
+15
+​
+16
+            for (int i = 0; i < n; i++)
+17
+            {
+18
+                string studentName = Console.ReadLine();
+19
+                double studentGrade = double.Parse(Console.ReadLine());
+20
+​
+21
+                if (!students.ContainsKey(studentName))
+22
+                {                    
+23
+                    students.Add(studentName, new List<double>());
+24
+                }
+25
+                students[studentName].Add(studentGrade); 
+26
+            }
+27
+​
+28
+            foreach (var item in students)
+29
+            {
+30
+                var currentListAverage = item.Value.Average();
+31
+​
+32
+                if (currentListAverage >= 4.5)
+33
+                {
+34
+                    graduated.Add(item.Key, currentListAverage);
+35
+                }
+36
+            }
+37
+​
+38
+            foreach (var item in graduated)
+39
+            {
+40
+                Console.WriteLine($"{item.Key} -> {item.Value:f2}");
+41
+            }
+42
+        }
+43
+    }
+44
+}
+45
+​
+Created on: 29/11/2022 19:11:26
+
+© 2011-2022 - Open Judge System (OJS) 1.5.20150729.95737d0 - running on Windows. Open source project.
