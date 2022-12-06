@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+namespace _07.CompanyUsers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, List<string>> companies = new Dictionary<string, List<string>>(); //Depo
+
+            string input = Console.ReadLine();
+
+            while (input != "End")
+            {
+                string[] cmdArgs = input.Split(" -> ");
+                string company = cmdArgs[0];
+                string employerId = cmdArgs[1];
+
+                if (!companies.ContainsKey(company)) // dictionary containsKey
+                {
+                    companies.Add(company, new List<string>());
+                }
+
+                if (!companies[company].Contains(employerId)) // list contains
+                {
+                    companies[company].Add(employerId);
+                }               
+
+                input = Console.ReadLine();
+            }
+
+            foreach (var item in companies)
+            {
+                Console.WriteLine(item.Key);
+                Console.WriteLine($"-- {string.Join(Environment.NewLine + "-- ", item.Value)}");
+            }
+            
+        }
+    }
+}
