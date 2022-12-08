@@ -1,0 +1,24 @@
+using System;
+
+namespace _02._Repeat_Strings_more
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] words = Console.ReadLine().Split();
+            string result = string.Empty;
+
+            foreach (string item in words)
+            {
+                int n = item.Length;
+
+                for (int i = 0; i < n; i++)
+                {
+                    result += item;
+                }
+            }
+            Console.WriteLine(result);
+        }
+    }
+}
