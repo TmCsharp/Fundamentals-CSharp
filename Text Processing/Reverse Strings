@@ -1,0 +1,22 @@
+using System;
+
+namespace _01.ReverseStrings_more
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+
+            while (input != "end")
+            {
+                char[] ch = input.ToCharArray();
+                Array.Reverse(ch);
+
+                Console.WriteLine($"{input} = {string.Join("",ch)}");
+
+                input = Console.ReadLine();
+            }
+        }
+    }
+}
