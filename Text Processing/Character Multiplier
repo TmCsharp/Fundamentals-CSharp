@@ -1,0 +1,41 @@
+using System;
+
+namespace _02._Character_Multiplier_more
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] text = Console.ReadLine().Split();
+            string str1 = text[0];
+            string str2 = text[1];
+
+            Console.WriteLine(GetSum(str1, str2));
+        }
+
+        public static int GetSum(string str1, string str2)
+        {
+            int sum = 0;
+            int max = Math.Max(str1.Length, str2.Length);
+
+            for (int i = 0; i < max; i++)
+            {
+                int a = 1;
+                int b = 1;
+
+                if (str1.Length > i)
+                {
+                    a = str1[i];
+                }
+                if (str2.Length > i)
+                {
+                    b = str2[i];
+                }
+
+                sum += a * b;
+            }
+
+            return sum;
+        }
+    }
+}
