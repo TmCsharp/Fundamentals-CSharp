@@ -1,0 +1,16 @@
+using System;
+
+namespace _03._Extract_File
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] folders = Console.ReadLine().Split("\\");
+            string[] file = folders[^1].Split('.');
+
+            Console.WriteLine($"File name: {file[0]}");
+            Console.WriteLine($"File extension: {file[1]}");
+        }
+    }
+}
