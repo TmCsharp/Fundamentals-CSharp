@@ -1,0 +1,39 @@
+using System;
+using System.Text;
+
+namespace _07._String_Explosion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {            
+            var result = new StringBuilder();
+            result.Append(Console.ReadLine());
+            int strength = 0;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (result[i] == '>')
+                {
+                    strength += int.Parse(result[i + 1].ToString());
+
+                    while (strength != 0)
+                    {
+                        if (result[i + 1] == '>' || i + 1 == result.Length - 1)
+                        {
+                            if (result[i + 1] != '>')
+                            {
+                                result.Remove(i + 1, 1);
+                            }
+                            
+                            break;
+                        }
+                        result.Remove(i + 1, 1);
+                        strength--;
+                    }              
+                }
+            }
+            Console.WriteLine(result);
+        }
+    }
+}
