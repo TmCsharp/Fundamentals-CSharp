@@ -1,0 +1,78 @@
+using System;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _02._Race
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string patternName = @"[A-Za-z]+";
+            string patternDistance = @"[0-9]";
+
+            Dictionary<string, int> ranking = new Dictionary<string, int>();
+
+            string[] racers = Console.ReadLine().Split(", ");
+
+            for (int i = 0; i < racers.Length; i++)
+            {
+                ranking.Add(racers[i], 0);
+            }
+
+            Regex regexName = new Regex(patternName);
+            Regex regexDistance = new Regex(patternDistance);
+            StringBuilder currentName = new StringBuilder();
+
+            string input = Console.ReadLine();
+            while (input != "end of race")
+            {
+                currentName.Clear();
+                int currentDistance = 0;
+                
+                MatchCollection matchName = regexName.Matches(input);
+                MatchCollection matchDistance = regexDistance.Matches(input);
+
+                foreach (var item in matchName)
+                {
+                    currentName.Append(item);
+                }
+                foreach (var item in matchDistance)
+                {
+                    currentDistance += int.Parse(item.ToString());
+                }
+
+                if (ranking.ContainsKey(currentName.ToString()))
+                {
+                    ranking[currentName.ToString()] += currentDistance;
+                }
+
+                input = Console.ReadLine();
+            }
+
+            int loop = 0;
+            foreach (var item in ranking.OrderByDescending(x => x.Value))
+            {
+                if (loop == 0)
+                {
+                    Console.WriteLine($"1st place: {item.Key}");
+                }
+                else if (loop == 1)
+                {
+                    Console.WriteLine($"2nd place: {item.Key}");
+                }
+                else if (loop == 2)
+                {
+                    Console.WriteLine($"3rd place: {item.Key}");
+                }
+                else
+                {
+                    break;
+                }
+                loop++;
+            }
+        }
+    }
+}
