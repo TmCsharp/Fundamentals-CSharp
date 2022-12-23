@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace _04._Star_Enigma
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string pattern = @"\@(?<planet>[A-Za-z]+)[^\@\-\!\:\>]*?\:\d+[^\@\-\!\:\>]*?\!(?<type>A|D)\![^\@\-\!\:\>]*?\-\>\d+";
+            int n = int.Parse(Console.ReadLine());
+            List<string> attacked = new List<string>();
+            List<string> destroyed = new List<string>();
+
+            Regex regex = new Regex(pattern);
+
+            for (int i = 0; i < n; i++)
+            {
+                string input = Console.ReadLine();
+                int starCnt = 0;
+                foreach (char ch in input.ToLower())
+                {
+                    if (ch == 's' || ch == 't' || ch == 'a' || ch == 'r')
+                    {
+                        starCnt++;
+                    }
+                }
+
+                StringBuilder decrypt = new StringBuilder();
+                foreach (char ch in input)
+                {
+                    decrypt.Append((char)(ch - starCnt));
+                }
+
+                string currentDescrypt = decrypt.ToString();
+                
+                Match match = regex.Match(currentDescrypt);
+
+                if (match.Success)
+                {
+                    string planet = match.Groups["planet"].Value;
+                    string type = match.Groups["type"].Value;
+
+                    if (type == "A")
+                    {
+                        attacked.Add(planet);
+                    }
+                    else if (type == "D")
+                    {
+                        destroyed.Add(planet);
+                    }
+                }
+            }
+
+            Console.WriteLine($"Attacked planets: {attacked.Count}");
+            foreach (var item in attacked.OrderBy(x => x))
+            {
+                Console.WriteLine($"-> {item}");
+            }
+
+            Console.WriteLine($"Destroyed planets: {destroyed.Count}");
+            foreach (var item in destroyed.OrderBy(x => x))
+            {
+                Console.WriteLine($"-> {item}");
+            }
+        }
+    }
+}
