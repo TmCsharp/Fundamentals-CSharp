@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace _05._Nether_Realms
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] input = Console.ReadLine().Split(",", StringSplitOptions.RemoveEmptyEntries);
+            string patternName = @"[^+\-*/.\d]";
+            string patternDamage = @"((|-)\d+\.\d+|(|-)\d+)";
+            string patternOper = @"[\*\/]";
+            Regex regexName = new Regex(patternName);
+            Regex regexDamage = new Regex(patternDamage);
+            Regex regexOper = new Regex(patternOper);
+            SortedDictionary<string, List<double>> result = new SortedDictionary<string, List<double>>();
+
+            foreach (var item in input.OrderBy(x => x))
+            {
+                var matchCollectionName = regexName.Matches(item).ToArray();
+                var matchCollectionDamage = regexDamage.Matches(item).ToArray();
+                var matchCollectionOper = regexOper.Matches(item).ToArray();
+
+
+                int healt = 0;
+                foreach (var ch in matchCollectionName)
+                {
+                    int currentPoint = char.Parse(ch.ToString());
+                    healt += currentPoint;
+                }
+
+                double damage = 0;
+                foreach (var match in matchCollectionDamage)
+                {
+                    double currentDamage = double.Parse(match.ToString());
+                    damage += currentDamage;
+                }
+
+                foreach (var ch in matchCollectionOper)
+                {
+                    char currentOper = char.Parse(ch.ToString());
+
+                    if (currentOper == '*')
+                    {
+                        damage *= 2;
+                    }
+                    else if (currentOper == '/')
+                    {
+                        damage /= 2;
+                    }
+                }
+
+                if (!result.ContainsKey(item))
+                {
+                    result.Add(item, new List<double>());
+                }
+
+                result[item].Add(healt);
+                result[item].Add(damage);
+            }
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Key} - {(int)item.Value[0]} health, {item.Value[1]:f2} damage");
+            }
+        }
+    }
+}
