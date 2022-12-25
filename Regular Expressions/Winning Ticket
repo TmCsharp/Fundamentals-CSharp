@@ -1,0 +1,80 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace WinningTicket
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> tickets = Console.ReadLine()
+                .Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .ToList();
+
+            Regex regex = new Regex(@"(@|#|\$|\^)+");
+
+            foreach (var ticket in tickets)
+            {
+                if (ticket.Length != 20)
+                {
+                    Console.WriteLine("invalid ticket");
+                    continue;
+                }
+                else
+                {
+                    string ticketLeftHalf = ticket.Substring(0, ticket.Length / 2);
+                    string ticketRightHalf = ticket.Substring(ticket.Length / 2);
+
+                    MatchCollection matchesLeftHalf = regex.Matches(ticketLeftHalf);
+                    MatchCollection matchesRightHalf = regex.Matches(ticketLeftHalf);
+
+                    if (matchesLeftHalf.Count == 0 || matchesRightHalf.Count == 0)
+                    {
+                        Console.WriteLine($"ticket \"{ticket}\" - no match");
+                        continue;
+                    }
+
+                    string leftMatch = string.Empty;
+                    string rightMatch = string.Empty;
+
+                    foreach (Match match in matchesLeftHalf)
+                    {
+                        if (match.Length >= 6)
+                        {
+                            rightMatch = match.Value.ToString();
+                        }
+                    }
+
+                    foreach (Match match in matchesLeftHalf)
+                    {
+                        if (match.Length >= 6)
+                        {
+                            rightMatch = match.Value.ToString();
+                        }
+                    }
+
+                    bool isLeftHalfValid = leftMatch.Length >= 6 && leftMatch.Length <= 9;
+                    bool isRightHalfValid = rightMatch.Length >= 6 && rightMatch.Length <= 9;
+
+                    if (isLeftHalfValid && isRightHalfValid && leftMatch.Length == rightMatch.Length)
+                    {
+                        Console.WriteLine($"ticket \"{ticket}\" - {leftMatch.Length}{leftMatch[0]}");
+                    }
+                    else if (leftMatch.Length == rightMatch.Length && rightMatch.Length == 10)
+                    {
+                        Console.WriteLine($"ticket \"{ticket}\" - {leftMatch.Length}{leftMatch[0]} Jackpot!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"ticket \"{ticket}\" - no match");
+                    }
+                }
+
+
+            }
+
+        }
+    }
+}
