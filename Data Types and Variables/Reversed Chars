@@ -1,0 +1,15 @@
+using System;
+
+namespace B._7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char first = char.Parse(Console.ReadLine());
+            char second = char.Parse(Console.ReadLine());
+            char thirdt = char.Parse(Console.ReadLine());
+            Console.WriteLine($"{thirdt} {second} {first}");
+        }
+    }
+}
