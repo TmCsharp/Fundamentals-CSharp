@@ -1,0 +1,16 @@
+using System;
+
+namespace B._7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fst = Console.ReadLine();
+            string scnd = Console.ReadLine();
+            string trd = Console.ReadLine();
+            string rslt = fst + trd + scnd;
+            Console.WriteLine(rslt);
+        }
+    }
+}
