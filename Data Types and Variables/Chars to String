@@ -1,0 +1,21 @@
+namespace B._7
+{
+    using System;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char ch = char.Parse(Console.ReadLine());
+            char ch2 = char.Parse(Console.ReadLine());
+            char ch3 = char.Parse(Console.ReadLine());
+
+
+            string converted = ch.ToString();
+            string converted2 = ch2.ToString();
+            string converted3 = ch3.ToString();
+
+            Console.Write($"{converted}{converted2}{converted3}");
+        }
+    }
+}
