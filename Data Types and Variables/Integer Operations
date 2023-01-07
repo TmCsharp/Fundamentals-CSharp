@@ -1,0 +1,22 @@
+using System;
+
+namespace B._7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = int.Parse(Console.ReadLine());
+            int num4 = int.Parse(Console.ReadLine());
+
+
+            long first = (long)num1 + num2;
+            long second = first / num3;
+            long final = second * num4;
+            Console.WriteLine(final);
+
+        }
+    }
+}
