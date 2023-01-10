@@ -1,0 +1,16 @@
+using System;
+
+namespace NewProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int nPersons = int.Parse(Console.ReadLine());
+            int pCapacity = int.Parse(Console.ReadLine());
+
+            int total = (int)Math.Ceiling((double)nPersons / pCapacity);
+            Console.WriteLine(total);
+        }
+    }
+}
