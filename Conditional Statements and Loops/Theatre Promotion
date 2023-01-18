@@ -1,0 +1,75 @@
+using System;
+
+namespace _5._7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string day = Console.ReadLine();
+            int age = int.Parse(Console.ReadLine());
+            int ticked = 0;
+            string test;
+            if (age >= 0 && age <= 18)
+            {
+                switch (day)
+                {
+                    case "Weekday":
+                        ticked = 12;
+                        break;
+                    case "Weekend":
+                        ticked = 15;
+                        break;
+                    case "Holiday":
+                        ticked = 5;
+                        break;
+                    default:
+                        Console.WriteLine("Error!");
+                        return;
+                }
+            }
+            else if (age > 18 && age <= 64)
+            {
+                switch (day)
+                {
+                    case "Weekday":
+                        ticked = 18;
+                        break;
+                    case "Weekend":
+                        ticked = 20;
+                        break;
+                    case "Holiday":
+                        ticked = 12;
+                        break;
+                    default:
+                        Console.WriteLine("Error!");
+                        return;
+                }
+            }
+            else if (age > 64 && age <= 122)
+            {
+                switch (day)
+                {
+                    case "Weekday":
+                        ticked = 12;
+                        break;
+                    case "Weekend":
+                        ticked = 15;
+                        break;
+                    case "Holiday":
+                        ticked = 10;
+                        break;
+                    default:
+                        Console.WriteLine("Error!");
+                        return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error!");
+                return;
+            }
+            Console.WriteLine($"{ticked}$");
+        }
+    }
+}
