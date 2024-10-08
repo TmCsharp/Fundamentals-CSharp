@@ -1,0 +1,16 @@
+
+
+using System.Linq;
+
+string input = Console.ReadLine().ToLower();
+
+Console.WriteLine(Vowel(input));
+
+
+static int Vowel(string input)
+{
+    char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
+
+
+    return input.Count(ch => vowels.Contains(ch));
+}
