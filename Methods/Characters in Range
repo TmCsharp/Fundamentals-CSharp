@@ -1,0 +1,31 @@
+using System;
+
+namespace CharactersInRange
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char inputOne = char.Parse(Console.ReadLine());
+            char inputTwo = char.Parse(Console.ReadLine());
+
+            PrintTheCharsBetweenTwoChars(inputOne, inputTwo);
+        }
+
+        private static void PrintTheCharsBetweenTwoChars(char first, char second)
+        {
+            if (second < first)
+            {
+                char temp = first;
+                first = second;
+                second = temp;
+            }
+
+            int nextChar = first + 1;
+            for (char i = (char)nextChar; i < second; i++)
+            {
+                Console.Write(i + " ");
+            }
+        }
+    }
+}
