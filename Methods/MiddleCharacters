@@ -1,0 +1,32 @@
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string input = Console.ReadLine();
+
+        string middleChars = FindMiddleCharacter(input);
+
+
+        Console.WriteLine(middleChars);
+    }
+
+    static string FindMiddleCharacter(string input)
+    {
+        int length = input.Length;
+        int middleIndex = length / 2;
+
+        // If the length is odd, return the single middle character
+        if (length % 2 != 0)
+        {
+            return input[middleIndex].ToString();
+        }
+        // If the length is even, return the two middle characters
+        else
+        {
+            return input.Substring(middleIndex - 1, 2);
+        }
+    }
+}
