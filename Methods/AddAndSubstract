@@ -1,0 +1,22 @@
+
+
+int first = int.Parse(Console.ReadLine());
+int second = int.Parse(Console.ReadLine());
+int third = int.Parse(Console.ReadLine());
+
+
+int sum = SumofTwo(first, second);
+int result = Substract(third , sum);
+
+Console.WriteLine(result);
+
+
+static int Substract(int third, int sum)
+{
+    return sum - third;
+}
+
+static int SumofTwo(int first, int second)
+{
+    return first + second;
+}
