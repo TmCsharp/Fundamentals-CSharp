@@ -18,36 +18,31 @@ namespace _01.Train_more
         {
 
             int n = int.Parse(Console.ReadLine());
-11
-            int[] people = new int[n];
-12
-            //int sum = 0;
-13
-​
-14
-            for (int i = 0; i < people.Length; i++)
-15
-            {
-16
-                people[i] = int.Parse(Console.ReadLine());
-17
-                //sum += people[i];
-18
-            }
-19
-​
-20
-            Console.WriteLine(string.Join(" ", people));
-21
-            Console.WriteLine(people.Sum());
-22
-        }
-23
-    }
-24
-}
-25
-​
-Created on: 09/10/2022 14:21:15
 
-© 2011-2022 - Open Judge System (OJS) 1.5.20150729.95737d0 - running on Windows. Open source project.
+            int[] people = new int[n];
+
+            //int sum = 0;
+
+​
+
+            for (int i = 0; i < people.Length; i++)
+
+            {
+
+                people[i] = int.Parse(Console.ReadLine());
+
+                //sum += people[i];
+
+            }
+
+​
+
+            Console.WriteLine(string.Join(" ", people));
+
+            Console.WriteLine(people.Sum());
+
+        }
+
+    }
+
+}
